@@ -99,6 +99,7 @@
 
         let percentage = (Number(temp) * 0.721) + 15
         percentage = String(percentage) + '%'
+        updateColor()
         document.getElementById('termometer-progress').style.height = percentage
     }
 
