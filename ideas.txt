@@ -1,3 +1,11 @@
 - escolher a precisão das saidas
 - Crie sua escala arbitrária
-- Veja a temperatura no seu local
+
+
+
+
+
+
+Concluídos: 
+    
+    - Veja a temperatura no seu local
