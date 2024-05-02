@@ -11,9 +11,12 @@
 
 
 
+
+
 // Função de chamada para a conversão dos valores e faz a saída
 
     document.getElementById('input-form').addEventListener('submit', function(event) {
+
         // Impede a página de recarregar no submit e perder as mudanças
         event.preventDefault()
 
@@ -28,6 +31,8 @@
     })
 
 //
+
+
 
 
 
@@ -65,6 +70,8 @@
 
 
 
+
+
 // Função que modifica o termômetro (max, min e porcentagem da height)
 
     function termometerPercentage(temp, unit) {
@@ -96,14 +103,34 @@
             return
         }
 
+        updateColor(temp)
 
         let percentage = (Number(temp) * 0.721) + 15
         percentage = String(percentage) + '%'
-        updateColor()
         document.getElementById('termometer-progress').style.height = percentage
     }
 
 //
+
+// Função que muda as cores do termômetro
+
+    function updateColor(temp) {
+
+        let root = document.documentElement
+
+        if (temp <= 15) {
+            root.style.setProperty('--termometer', 'blue')
+        }
+        if (temp > 15 && temp < 40) {
+            root.style.setProperty('--termometer', '#4CAF50')
+        }
+        if (temp >= 40) {
+            root.style.setProperty('--termometer', 'red')
+        }
+    }   
+
+// 
+
 
 
 
@@ -113,6 +140,7 @@
     let on = 0
 
     function activateLocal() {
+        
         if (!on) {
             document.getElementById('local').style.display = "flex"
             on = 1

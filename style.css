@@ -6,7 +6,7 @@
     --main-blue: rgb(76, 168, 180);
 
     /* Variável para mudança de temperatura do termômetro */
-        --termometer: #4CAF50;
+        --termometer: #ddd;
 }
 
 html, body {
@@ -112,7 +112,6 @@ body {
 
     .progress-bar {
         background-color: var(--termometer);
-        /*  */
         color: white;
         
         border-radius: 1rem;
@@ -131,13 +130,14 @@ body {
     }
 
     .progress-container::after {
+        /* visibility: hidden; */
         content: "";
         display: block;
 
         height: 5rem;
         width: 5rem;
 
-        background-image: radial-gradient(var(--termometer) 50%, #ddd 50%);
+        background-color: #ddd;
         border-radius: 50%;
 
         position: absolute;
@@ -145,6 +145,24 @@ body {
         bottom: -2.5rem;
 
         z-index: 0;
+    }
+    
+    .progress-container::before {
+        content: "";
+        display: block;
+
+        height: 3.5rem;
+        width: 3.5rem;
+
+        background-color: var(--termometer);
+        border-radius: 50%;
+
+        position: absolute;
+        bottom: -1.75rem;
+
+        z-index: 1;
+
+        transition: background-color .5s ease;
     }
 
     #max, #min {
