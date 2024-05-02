@@ -23,11 +23,13 @@
         temp_unit = document.getElementsByName('temperatureUnit')[0].value
         temp = document.getElementsByName('temperature')[0].value
 
+        if(temp === "") temp = 0
+
         convertTemperature(temp, temp_unit)
 
-        document.getElementById('span-celsius').textContent = Number(temp_celsius).toFixed(0) + ' °C'
-        document.getElementById('span-fahrenheit').textContent = Number(temp_fahrenheit).toFixed(0) + ' °F'
-        document.getElementById('span-kelvin').textContent = Number(temp_kelvin).toFixed(0) + ' K'
+        document.getElementById('span-celsius').textContent = parseInt(temp_celsius) + ' °C'
+        document.getElementById('span-fahrenheit').textContent = parseInt(temp_fahrenheit) + ' °F'
+        document.getElementById('span-kelvin').textContent = parseInt(temp_kelvin) + ' K'
     })
 
 //
@@ -130,24 +132,3 @@
     }   
 
 // 
-
-
-
-
-
-// Função para ativar a visibilidade da seção Local
-
-    let on = 0
-
-    function activateLocal() {
-
-        if (!on) {
-            document.getElementById('local').style.display = "flex"
-            on = 1
-        } else {
-            document.getElementById('local').style.display = "none"
-            on = 0
-        }
-    }
-
-//
