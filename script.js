@@ -119,13 +119,13 @@
         let root = document.documentElement
 
         if (temp <= 15) {
-            root.style.setProperty('--termometer', 'blue')
+            root.style.setProperty('--termometer', '#00f')
         }
         if (temp > 15 && temp < 40) {
             root.style.setProperty('--termometer', '#4CAF50')
         }
         if (temp >= 40) {
-            root.style.setProperty('--termometer', 'red')
+            root.style.setProperty('--termometer', '#f00')
         }
     }   
 
@@ -140,7 +140,7 @@
     let on = 0
 
     function activateLocal() {
-        
+
         if (!on) {
             document.getElementById('local').style.display = "flex"
             on = 1

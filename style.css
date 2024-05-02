@@ -28,6 +28,8 @@ body {
 .main-container {
     display: flex;
     justify-content: space-evenly;
+
+    height: 75%;
 }
 
 
@@ -130,7 +132,6 @@ body {
     }
 
     .progress-container::after {
-        /* visibility: hidden; */
         content: "";
         display: block;
 
@@ -273,33 +274,106 @@ body {
         box-sizing: border-box;
         padding: 3rem;
         
-        /* display: flex; */
         display: none;
         flex-flow: column;
         gap: 2rem;
     }
     
-    .local__img {
+    .local__main {
         background-color: blue;
         border-radius: 2rem;
-        height: 50%;
+        height: 40%;
+
+        padding: 2rem;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .local__main__img {
+        width: 45%;
+    }
+    .local__main__img img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .local__main hr {
+        width: 2px;
+        border: none;
+        height: 100%;
+        background-color: black;
+        margin: 0;
+    }
+
+    .local__main__temp {
+        width: 45%;
+
+        display: flex;
+        justify-content: center;
+    }
+    .local__main__temp span {
+        font-size: 10rem;
     }
 
     .local__location {
         background-color: blue;
         border-radius: 2rem;
-        height: 10%;
+        height: 15%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .local__temp {
+    .local__location span {
+        font-size: 4rem;
+    }
+
+    .local__temp-range {
         display: flex;
         gap: 2rem;
-        height: calc(100% - 2rem - 60%);
+        height: calc(100% - 2rem - 55%);
     }
 
     .local-min, .local-max {
         background-color: blue;
         border-radius: 2rem;
         height: 100%;
+        width: 100%;
+
+        padding: 2rem;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-flow: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .local-min h2, .local-max h2 {
+        font-size: 3rem;
+
+        margin: 0;
+    }
+
+    .temp-range {
+        flex-grow: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .temp-range span {
+        font-size: 10rem;
+    }
+    
+    .local__temp-range hr {
+        border: none;
+        height: 2px;
+        background-color: black;
+
         width: 100%;
     }
