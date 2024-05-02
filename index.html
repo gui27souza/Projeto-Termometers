@@ -13,6 +13,7 @@
                 <h1>
                     Celsius
                 </h1>
+                <hr>
                 <div class="item__text">
                     <span id="span-celsius"></span>
                 </div>
@@ -21,6 +22,7 @@
                 <h1>
                     Fahrenheit 
                 </h1>
+                <hr>
                 <div class="item__text">
                     <span id="span-fahrenheit"></span>
                 </div>
@@ -29,6 +31,7 @@
                 <h1>
                     Kelvin
                 </h1>
+                <hr>
                 <div class="item__text">
                     <span id="span-kelvin"></span>
                 </div>
@@ -83,9 +86,10 @@
                 <option value="F">Fahrenheit</option>
                 <option value="K">Kelvin</option>
             </select>
-            <input type="number" name="temperature">
-            <input type="submit">
-            <input type="button" value="Local" onclick="activateLocal()">
+            <input type="number" name="temperature" id="in-temp">
+            <input type="submit" id="in-submit">
+            <input type="button" value="Voltar" id="in-back" onclick="activateLocal()">
+            <input type="button" value="Local" id="in-local" onclick="activateLocal()">
         </form>
     </div>
     

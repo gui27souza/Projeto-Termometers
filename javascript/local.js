@@ -5,13 +5,27 @@
     function activateLocal() {
 
         if (!on) {
-            document.getElementById('local').style.display = "flex"
             on = 1
+
+            document.getElementById('local').style.display = "flex"
+            document.getElementById('in-back').style.display = "block"
+            
+            document.getElementById('temperatureUnit').style.display = "none"
+            document.getElementById('in-temp').style.display = "none"
+            document.getElementById('in-submit').style.display = "none"
+            document.getElementById('in-local').style.display = "none"
 
             getLocation()
         } else {
-            document.getElementById('local').style.display = "none"
             on = 0
+
+            document.getElementById('local').style.display = "none"
+            document.getElementById('in-back').style.display = "none"
+
+            document.getElementById('temperatureUnit').style.display = "block"
+            document.getElementById('in-temp').style.display = "block"
+            document.getElementById('in-submit').style.display = "block"
+            document.getElementById('in-local').style.display = "block"
         }
     }
 
@@ -59,7 +73,6 @@
             const city = allComponents.city || allComponents.town || allComponents.village
             const country = allComponents.country_code.toUpperCase()
 
-            console.log(`City: ${city}, Country Code: ${country}`)
             updateLocation(city, country)
         } catch (error) {
             console.error("Error fetching location data: ", error)
