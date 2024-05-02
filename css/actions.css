@@ -1,0 +1,38 @@
+.actions-container form {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.actions-container input,
+.actions-container select {
+    background-color: var(--main-blue);
+    
+    box-shadow: var(--box-shadow-default);
+
+    border: none;
+    border-radius: 2rem;
+
+    font-family: Nunito;
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    width: 17rem;
+    
+    box-sizing: border-box;
+    padding: 1.6rem;   
+
+    transition: box-shadow .3s ease;
+}
+
+.actions-container input:hover,
+.actions-container select:hover {
+    border: none;
+    outline: none;
+
+    box-shadow: 0 0 2rem var(--main-blue);
+}
+
+#in-back {
+    display: none;
+}

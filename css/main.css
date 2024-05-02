@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+:root {
+    --main-purple: rgb(159, 57, 199);
+    --main-blue: rgb(76, 168, 180);
+
+    --box-shadow-default: 0 0 2rem black;
+
+    /* Variável para mudança de temperatura do termômetro */
+        --termometer: #ddd;
+}
+
+html, body {
+    font-size: 62.5%;
+    font-family: Nunito;
+
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-purple);
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+
+    height: 75%;
+}
