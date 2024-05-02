@@ -93,6 +93,7 @@
             break
         }
 
+        updateColor(temp)
 
         if (temp <= -20) {
             document.getElementById('termometer-progress').style.height = 0
@@ -103,7 +104,6 @@
             return
         }
 
-        updateColor(temp)
 
         let percentage = (Number(temp) * 0.721) + 15
         percentage = String(percentage) + '%'
@@ -135,7 +135,7 @@
 
 
 
-// Local
+// Função para ativar a visibilidade da seção Local
 
     let on = 0
 
@@ -149,4 +149,5 @@
             on = 0
         }
     }
+
 //
