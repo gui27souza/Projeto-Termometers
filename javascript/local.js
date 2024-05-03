@@ -10,6 +10,8 @@
             document.getElementById('local').style.display = "flex"
             document.getElementById('in-back').style.display = "block"
             
+            document.getElementById('temperatureUnit-local').style.display = "block"
+            
             document.getElementById('temperatureUnit').style.display = "none"
             document.getElementById('in-temp').style.display = "none"
             document.getElementById('in-submit').style.display = "none"
@@ -21,6 +23,8 @@
 
             document.getElementById('local').style.display = "none"
             document.getElementById('in-back').style.display = "none"
+
+            document.getElementById('temperatureUnit-local').style.display = "none"
 
             document.getElementById('temperatureUnit').style.display = "block"
             document.getElementById('in-temp').style.display = "block"
@@ -95,6 +99,7 @@ function updateLocation(city, country) {
 // Função que pega os dados do clima baseado na posição cedida pelo usuário, utilizando a API OpenWeatherMap
 
     function getWeather(latitude, longitude) {
+
         const apiKey = '0a01cadc2ea86cb5ef9b410202403ffe'
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
 
@@ -114,15 +119,44 @@ function updateLocation(city, country) {
 // Função que adiciona os dados de clima no conteúdo HTML
 
     function updateWeatherData(data) {
-        document.getElementById('local-temp').textContent = `${ parseInt(data.main.temp)}°`
-        document.getElementById('local-min').textContent = `${ parseInt(data.main.temp_min)}°`
-        document.getElementById('local-max').textContent = `${ parseInt(data.main.temp_max)}°`
-        
-        convertTemperature(data.main.temp, 'C')
 
-        document.getElementById('span-celsius').textContent = parseInt(temp_celsius) + ' °C'
-        document.getElementById('span-fahrenheit').textContent = parseInt(temp_fahrenheit) + ' °F'
-        document.getElementById('span-kelvin').textContent = parseInt(temp_kelvin) + ' K'
+        let unit = document.getElementById('temperatureUnit-local').value
+
+        let temp_c = parseInt(data.main.temp)
+        let temp_min_c = parseInt(data.main.temp_min)
+        let temp_max_c = parseInt(data.main.temp_max)
+
+        console.log(temp_c)
+
+        if (unit == 'C') {
+            document.getElementById('local-temp').textContent = `${temp_c}°`
+            document.getElementById('local-min').textContent = `${temp_min_c}°`
+            document.getElementById('local-max').textContent = `${temp_max_c}°`
+        }
+
+        if (unit == 'F') {
+            let temp_f = parseInt((temp_c * 9/5) + 32)
+            let temp_min_f = parseInt((temp_min_c * 9/5) + 32)
+            let temp_max_f = parseInt((temp_max_c * 9/5) + 32)
+
+            document.getElementById('local-temp').textContent = `${temp_f}°`
+            document.getElementById('local-min').textContent = `${temp_min_f}°`
+            document.getElementById('local-max').textContent = `${temp_max_f}°`
+        }
+
+        if (unit == 'K') {
+            document.getElementById('local-temp').textContent = `${temp_c + 273}`
+            document.getElementById('local-min').textContent = `${temp_min_c + 273}`
+            document.getElementById('local-max').textContent = `${temp_max_c + 273}`
+
+            document.documentElement.style.setProperty('--api-out-font-size', '8rem')
+        }
+        
+        termometerPercentage(temp_c, unit)
+
+        document.getElementById('span-celsius').textContent = temp_c + ' °C'
+        document.getElementById('span-fahrenheit').textContent = parseInt(temp_c * 9/5) + 32 + ' °F'
+        document.getElementById('span-kelvin').textContent = temp_c + 273 + ' K'
     }
 
 // 

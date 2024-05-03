@@ -1,3 +1,8 @@
+:root {
+    --api-out-font-size: 10rem;
+}
+
+
 .local {
     background-color: var(--main-blue);
     color: white;
@@ -60,7 +65,7 @@
     justify-content: center;
 }
 .local__main__temp span {
-    font-size: 10rem;
+    font-size: var(--api-out-font-size);
 }
 
 .local__location {
@@ -111,7 +116,7 @@
     align-items: center;
 }
 .temp-range span {
-    font-size: 10rem;
+    font-size: var(--api-out-font-size);
 }
 
 .local__temp-range hr {
