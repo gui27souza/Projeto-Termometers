@@ -90,6 +90,11 @@
                 <option value="F">Fahrenheit</option>
                 <option value="K">Kelvin</option>
             </select>
+            <select id="temperatureUnit-local" name="temperatureUnit-Local" onchange="getLocation()">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+            </select>
             <input type="number" name="temperature" id="in-temp">
             <input type="submit" id="in-submit">
             <input type="button" value="Voltar" id="in-back" onclick="activateLocal()">

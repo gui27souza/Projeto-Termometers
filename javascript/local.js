@@ -10,6 +10,8 @@
             document.getElementById('local').style.display = "flex"
             document.getElementById('in-back').style.display = "block"
             
+            document.getElementById('temperatureUnit-local').style.display = "block"
+            
             document.getElementById('temperatureUnit').style.display = "none"
             document.getElementById('in-temp').style.display = "none"
             document.getElementById('in-submit').style.display = "none"
@@ -21,6 +23,8 @@
 
             document.getElementById('local').style.display = "none"
             document.getElementById('in-back').style.display = "none"
+
+            document.getElementById('temperatureUnit-local').style.display = "none"
 
             document.getElementById('temperatureUnit').style.display = "block"
             document.getElementById('in-temp').style.display = "block"
@@ -95,13 +99,38 @@ function updateLocation(city, country) {
 // Função que pega os dados do clima baseado na posição cedida pelo usuário, utilizando a API OpenWeatherMap
 
     function getWeather(latitude, longitude) {
+
+        const unit = document.getElementById('temperatureUnit-local').value
+
+        let unit_url
+
+        switch (unit) {
+            case 'C':
+                unit_url = 'metric'
+            break
+            case 'F':
+                unit_url = 'imperial'
+            break
+            case 'K':
+                unit_url = ''
+            break
+        }
+
+
         const apiKey = '0a01cadc2ea86cb5ef9b410202403ffe'
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit_url}`
 
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                updateWeatherData(data)
+
+                let current_temp = parseInt(data.main.temp)
+                let min_temp = parseInt(data.main.temp_min)
+                let max_temp = parseInt(data.main.temp_max)
+
+                updateWeatherData(current_temp, min_temp, max_temp, unit)
+
+                console.log(data)
             })
             .catch(error => {
                 console.error('Error fetching the weather data:', error)
@@ -113,13 +142,21 @@ function updateLocation(city, country) {
 
 // Função que adiciona os dados de clima no conteúdo HTML
 
-    function updateWeatherData(data) {
-        document.getElementById('local-temp').textContent = `${ parseInt(data.main.temp)}°`
-        document.getElementById('local-min').textContent = `${ parseInt(data.main.temp_min)}°`
-        document.getElementById('local-max').textContent = `${ parseInt(data.main.temp_max)}°`
+    function updateWeatherData(current_temp, min_temp, max_temp, unit) {
         
-        convertTemperature(data.main.temp, 'C')
+        convertTemperature(current_temp, unit)
 
+        if (unit == 'K') document.documentElement.style.setProperty('--api-out-font-size', '8rem')
+        else {
+            current_temp += '°'
+            min_temp += '°'
+            max_temp += '°'
+        }
+
+        document.getElementById('local-temp').textContent = `${current_temp}`
+        document.getElementById('local-min').textContent = `${min_temp}`
+        document.getElementById('local-max').textContent = `${max_temp}`
+        
         document.getElementById('span-celsius').textContent = parseInt(temp_celsius) + ' °C'
         document.getElementById('span-fahrenheit').textContent = parseInt(temp_fahrenheit) + ' °F'
         document.getElementById('span-kelvin').textContent = parseInt(temp_kelvin) + ' K'

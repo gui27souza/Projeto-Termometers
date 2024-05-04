@@ -1,0 +1,3 @@
+- Problemas na mudança de unidade na seção local :
+
+        as temperaturas mudam por conta de problemas de conversão e precisão decimal
