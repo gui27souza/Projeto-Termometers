@@ -17,7 +17,7 @@
             document.getElementById('in-submit').style.display = "none"
             document.getElementById('in-local').style.display = "none"
 
-            getLocation()
+            setTimeout(getLocation, 1500)
         } else {
             on = 0
 
@@ -88,6 +88,7 @@
 
 // Função que adiciona os dados de cidade e país no conteúdo HTML
 function updateLocation(city, country) {
+    document.getElementById('loading-location').style.display = 'none'
     document.getElementById('location').textContent = city + ', ' + country
 }
 
@@ -127,8 +128,9 @@ function updateLocation(city, country) {
                 let current_temp = parseInt(data.main.temp)
                 let min_temp = parseInt(data.main.temp_min)
                 let max_temp = parseInt(data.main.temp_max)
+                let weather_icon = data.weather[0].icon
 
-                updateWeatherData(current_temp, min_temp, max_temp, unit)
+                updateWeatherData(current_temp, min_temp, max_temp, unit, weather_icon)
 
                 console.log(data)
             })
@@ -142,7 +144,9 @@ function updateLocation(city, country) {
 
 // Função que adiciona os dados de clima no conteúdo HTML
 
-    function updateWeatherData(current_temp, min_temp, max_temp, unit) {
+    function updateWeatherData(current_temp, min_temp, max_temp, unit, weather_icon) {
+
+        changeWeatherImage(weather_icon)
         
         convertTemperature(current_temp, unit)
 
@@ -164,6 +168,15 @@ function updateLocation(city, country) {
 
 // 
 
+// Função que atualiza o ícone de clima
+
+    function changeWeatherImage(weather_icon) {
+        document.getElementById('weather-image').setAttribute('src',
+            `https://openweathermap.org/img/wn/${weather_icon}@4x.png`
+        )
+    }
+
+// 
 
 
 

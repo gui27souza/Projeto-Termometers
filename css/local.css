@@ -78,6 +78,10 @@
     justify-content: center;
 }
 
+#loading-location {
+    height: 8rem;
+}
+
 .local__location span {
     font-size: 5rem;
 }
