@@ -1,8 +1,3 @@
-:root {
-    --api-out-font-size: 10rem;
-}
-
-
 .local {
     background-color: var(--main-blue);
     color: white;

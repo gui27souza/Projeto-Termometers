@@ -2,13 +2,24 @@
 
 
 :root {
-    --main-purple: rgb(159, 57, 199);
-    --main-blue: rgb(76, 168, 180);
 
-    --box-shadow-default: 0 0 2rem black;
+    /* Paleta de cores */
+        --main-purple: rgb(159, 57, 199);
+        --main-blue: rgb(76, 168, 180);
+    /**/
 
-    /* Variável para mudança de temperatura do termômetro */
+    /* Mudança de sombra */
+        --box-shadow-default: 0 0 2rem black;
+    /**/
+
+    /* Mudança de background do termômetro */
         --termometer: #ddd;
+    /**/
+
+    /* Mudança de tamanho da fonte do local */
+        --api-out-font-size: 10rem;
+    /**/
+        
 }
 
 html, body {
