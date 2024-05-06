@@ -1,0 +1,33 @@
+@media screen and (orientation: landscape) {
+    body {
+        min-width: 1500px;
+        min-height: calc(670px + 25vh);
+    }
+    .temp-container, .termometer, .local {
+        min-width: 500px;
+
+        min-height: 670px;
+    }
+}
+
+@media screen and (max-height: 875px), screen and (max-width: 1874px) {
+    body {
+        background-color: black;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    body {
+        background-color: green;
+    }
+
+    .actions-container {
+        min-width: none;
+    }
+
+    .main-container {
+        flex-flow: column;
+        align-items: center;
+        width: 100vw;
+    }
+}

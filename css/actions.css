@@ -1,3 +1,11 @@
+.actions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-width: 1500px;
+}
+
 .actions-container form {
     display: flex;
     justify-content: center;
