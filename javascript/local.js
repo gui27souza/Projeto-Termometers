@@ -146,7 +146,7 @@ function updateLocation(city, country) {
 
     function updateWeatherData(current_temp, min_temp, max_temp, unit, weather_icon) {
 
-        changeWeatherImage(weather_icon)
+        updateWeatherImage(weather_icon)
         
         convertTemperature(current_temp, unit)
 
@@ -170,7 +170,7 @@ function updateLocation(city, country) {
 
 // Função que atualiza o ícone de clima
 
-    function changeWeatherImage(weather_icon) {
+    function updateWeatherImage(weather_icon) {
         document.getElementById('weather-image').setAttribute('src',
             `https://openweathermap.org/img/wn/${weather_icon}@4x.png`
         )
