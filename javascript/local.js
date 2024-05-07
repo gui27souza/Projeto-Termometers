@@ -18,6 +18,8 @@
             document.getElementById('in-local').style.display = "none"
 
             setTimeout(getLocation, 1500)
+
+            growViewheight(on)
         } else {
             on = 0
 
@@ -30,6 +32,8 @@
             document.getElementById('in-temp').style.display = "block"
             document.getElementById('in-submit').style.display = "block"
             document.getElementById('in-local').style.display = "block"
+
+            growViewheight(on)
         }
     }
 
@@ -197,6 +201,25 @@ function updateLocation(city, country) {
             case error.UNKNOWN_ERROR:
                 alert("An unknown error occurred.")
                 break
+        }
+    }
+
+// 
+
+
+
+
+// Função para responsividade da página em mobile, aumentando seu tamanho de acordo com a necessidade
+
+    function growViewheight(on) {
+        var styleSheet = document.createElement("style");
+        document.head.appendChild(styleSheet);
+
+        if (on) { 
+            styleSheet.sheet.insertRule("@media screen and (orientation: portrait) {html {height: 275vh;}", 0);
+        } 
+        if (!on) {
+            styleSheet.sheet.insertRule("@media screen and (orientation: portrait) {html {height: 185vh;}", 0);
         }
     }
 
