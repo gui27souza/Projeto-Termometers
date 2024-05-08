@@ -1,5 +1,6 @@
-@media 
-screen and (orientation: portrait)
+/* Media-Queries para ajustar o tamanho de fonte ideal para a devida largura de tela */
+
+@media screen
 and (max-width: 400px) {
     
     #local-temp {
@@ -21,10 +22,19 @@ and (max-width: 400px) {
     .local-min, .local-max {
         padding: 2rem 0;
     }
+
 }
 
-@media 
-screen and (orientation: portrait)
+@media screen
+and (min-width: 350px) {
+
+    .local-min, .local-max {
+        padding: 2rem;
+    }
+
+}
+
+@media screen
 and (min-width: 400px)
 and (max-width: 450px) {
     
@@ -44,13 +54,9 @@ and (max-width: 450px) {
         font-size: 4rem;
     }
 
-    .local-min, .local-max {
-        padding: 2rem;
-    }
 }
 
-@media 
-screen and (orientation: portrait)
+@media screen
 and (min-width: 451px)
 and (max-width: 550px) {
 
@@ -70,13 +76,9 @@ and (max-width: 550px) {
         font-size: 5rem;
     }
 
-    .local-min, .local-max {
-        padding: 2rem;
-    }
 }
 
-@media 
-screen and (orientation: portrait)
+@media screen
 and (min-width: 550px) {
 
       
@@ -96,7 +98,4 @@ and (min-width: 550px) {
         font-size: 5rem;
     }
 
-    .local-min, .local-max {
-        padding: 2rem;
-    }
 }

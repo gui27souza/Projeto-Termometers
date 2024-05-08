@@ -2,4 +2,12 @@
 
         as temperaturas mudam por conta de problemas de conversão e precisão decimal
 
-- Organizar media.css
+- Ajustar a fonte da seção actions de acordo com a largura da tela
+
+
+
+
+
+Concluído
+
+        - Organizar media.css

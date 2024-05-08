@@ -1,131 +1,148 @@
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 900px) {
 
     html {
         height: 185vh;
     }
 
     body {
-        background-color: var(--main-purple);
+        margin: 20px 0;
+        
         align-items: center;
-
-        margin: 20px;
     }
 
-    .actions-container {
-        min-width: initial;
+    /* Actions */
 
-        margin-bottom: 40px;
+        .actions-container {
+            min-width: initial;
 
-        position: sticky;
-        top: 30px;
+            margin-bottom: 40px;
 
-        order: 1;
-        z-index: 10;
-    }
+            position: sticky;
+            top: 30px;
 
-    .actions-container form {
-        width: 100%;
-        gap: 5px;
-        background-color: aliceblue;
-        border-radius: 1rem;
-        padding: 1rem;
-    }
-    
-    .actions-container input,
-    .actions-container select {
-        padding: 0;
-        width: 100%;
-        font-size: 1.5rem;
-        border-radius: .5rem;
-        box-shadow: none;
-    }
+            order: 1;
+            z-index: 10;
+        }
 
-    .actions-container select {
-        font-size: 1.2rem;
-    }
+        .actions-container form {
+            width: 100%;
+            gap: 5px;
+            background-color: aliceblue;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+        
+        .actions-container input,
+        .actions-container select {
+            padding: 0;
+            width: 100%;
+            font-size: 1.5rem;
+            border-radius: .5rem;
+            box-shadow: none;
+        }
 
-    .actions-container input[type="number"] {
-        padding-left: .5rem;
-    }
+        .actions-container select {
+            font-size: 1.2rem;
+        }
 
-    .actions-container input:hover,
-    .actions-container select:hover {
-        box-shadow: none;
-    }
+        .actions-container input[type="number"] {
+            padding-left: .5rem;
+        }
 
-    .main-container {
-        height: 100%;
-        width: 80%;
+        .actions-container input:hover,
+        .actions-container select:hover {
+            box-shadow: none;
+        }
 
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 160px;
+    /**/
 
-        order: 2;
-    }
+    /* main container geral */
 
-    .temp-container, .termometer, .local {
-        width: 100%;
-        height: 70vh;
-    }
+        .main-container {
+            height: 100%;
+            width: 80%;
 
-    .temp-container__item {
-        width: 100%;
-        height: 25rem;
-    }
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 160px;
 
-    .item__text span {
-        font-size: 6rem;
-    }
+            order: 2;
+        }
 
-    .local:hover {
-        width: 100%;
-    }
+        .temp-container, .termometer, .local {
+            width: 100%;
+            height: 70vh;
+        }
 
-    .local__main__img {
-        height: 50%;
-        width: unset;
-    }
+    /**/
 
-    .local__main__img img {
-        height: 100%;
-        width: unset;
-    }
+    /* temp_output */
 
-    .local__main {
-        flex-flow: column;
-    }
+        .temp-container__item {
+            width: 100%;
+            height: 25rem;
+        }
 
-    .local__main hr {
-        height: 2px;
-        width: 100%;
-    }
+        .item__text span {
+            font-size: 6rem;
+        }
+
+    /**/
+
+    /* local */
+
+        .local:hover {
+            width: 100%;
+        }
+
+        .local__main__img {
+            height: 50%;
+            width: unset;
+        }
+
+        .local__main__img img {
+            height: 100%;
+            width: unset;
+        }
+
+        .local__main {
+            flex-flow: column;
+        }
+
+        .local__main hr {
+            height: 2px;
+            width: 100%;
+        }
+
+    /**/
 }
 
-@media 
-screen and (orientation: portrait)
-and (min-width: 550px) {
+/* Media-Query para ajustar as condições do icon e temperatura principal de Local */
+    @media screen
+    and (min-width: 550px) {
 
-    .local__main {
-        flex-flow: row;
+        .local__main {
+            flex-flow: row;
+        }
+        
+        .local__main__img, .local__main__temp {
+            width: 50%;
+        }
+        
+        .local__main__img {
+            height: 100%;
+        }
+        
+        .local__main__img img {
+            height: 100%;
+        }
+        
+        .local__main hr {
+            height: 100%;
+            width: 2px;
+        }
+        
     }
-    
-    .local__main__img, .local__main__temp {
-        width: 50%;
-    }
-    
-    .local__main__img {
-        height: 100%;
-    }
-    
-    .local__main__img img {
-        height: 100%;
-    }
-    
-    .local__main hr {
-        height: 100%;
-        width: 2px;
-    }
-    
-}
+
+/**/
