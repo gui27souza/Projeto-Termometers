@@ -217,6 +217,7 @@ function updateLocation(city, country) {
 
         if (on) { 
             styleSheet.sheet.insertRule("@media screen and (orientation: portrait) {html {height: 275vh;}", 0);
+            styleSheet.sheet.insertRule("@media screen and (orientation: portrait) {:root {--api-out-font-size:5rem}}", 1);
         } 
         if (!on) {
             styleSheet.sheet.insertRule("@media screen and (orientation: portrait) {html {height: 185vh;}", 0);

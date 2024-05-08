@@ -99,4 +99,12 @@
     .local:hover {
         width: 100%;
     }
+
+    .local__location span {
+        font-size: 2.7rem;
+    }
+
+    .local__main__img {
+        width: 50%;
+    }
 }
