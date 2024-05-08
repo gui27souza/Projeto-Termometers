@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Termometers</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/temp_output.css">
-    <link rel="stylesheet" href="css/termometer.css">
-    <link rel="stylesheet" href="css/actions.css">
-    <link rel="stylesheet" href="css/local.css">
 
-    <link rel="stylesheet" href="css/media.css">
+    <!-- CSS Geral -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/temp_output.css">
+        <link rel="stylesheet" href="css/termometer.css">
+        <link rel="stylesheet" href="css/actions.css">
+        <link rel="stylesheet" href="css/local.css">
+    <!---->
+
+    <!-- CSS Media-Queries -->
+        <link rel="stylesheet" href="css/media/media.css">
+        <link rel="stylesheet" href="css/media/media_portrait.css">
+        <link rel="stylesheet" href="css/media/media_portrait_font-size.css">
+    <!---->
 </head>
 <body id="body">
 
@@ -61,27 +68,26 @@
                 </div>
                 <hr>
                 <div class="local__main__temp">
-                    <span id="local-temp">27°</span>
+                    <span id="local-temp"></span>
                 </div>
             </div>
             <div class="local__location">
-                <!-- <img src="gif/3-dots.gif" alt="" id="loading-location"> -->
-                <img src="" alt="" id="loading-location">
-                <span id="location">Sao Paulo, BR</span>
+                <img src="gif/3-dots.gif" alt="" id="loading-location">
+                <span id="location"></span>
             </div>
             <div class="local__temp-range">
                 <div class="local-min">
                     <h2>Min</h2>
                     <hr>
                     <div class="temp-range">
-                        <span id="local-min">18°</span>
+                        <span id="local-min"></span>
                     </div>
                 </div>
                 <div class="local-max">
                     <h2>Max</h2>
                     <hr>
                     <div class="temp-range">
-                        <span id="local-max">30°</span>
+                        <span id="local-max"></span>
                     </div>
                 </div>
             </div>
