@@ -8,7 +8,7 @@ and (max-width: 400px) {
     }
     
     .local__location span {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .local-min h2, .local-max h2 {
@@ -43,7 +43,7 @@ and (max-width: 450px) {
     }
     
     .local__location span {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     .local-min h2, .local-max h2 {
@@ -65,7 +65,7 @@ and (max-width: 550px) {
     }
     
     .local__location span {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
 
     .local-min h2, .local-max h2 {

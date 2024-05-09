@@ -4,6 +4,8 @@
 
 - Ajustar a fonte da seção actions de acordo com a largura da tela
 
+- com 700px ou mais, o termometer perde seu height
+
 
 
 
